@@ -1,0 +1,94 @@
+﻿@model RaceDay.MVC.Models.ProfileViewModel
+
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<div class="container mt-5">
+
+    <h2>My Profile</h2>
+    <p>View and update your personal information.</p>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.Error
+        </div>
+    }
+
+    <div class="card shadow p-4 mt-3">
+
+        <form asp-action="Profile" method="post">
+
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="ParticipantId" />
+            <input type="hidden" asp-for="Email" />
+            <input type="hidden" asp-for="Role" />
+
+            <div class="mb-3">
+                <label asp-for="FirstName" class="form-label">
+                    First Name
+                </label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Surname" class="form-label">
+                    Surname
+                </label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">
+                    Email
+                </label>
+                <input asp-for="Email" class="form-control" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label">
+                    Phone Number
+                </label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Role" class="form-label">
+                    Role
+                </label>
+                <input asp-for="Role" class="form-control" readonly />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Update Profile
+            </button>
+
+            <a asp-controller="Participant"
+               asp-action="Dashboard"
+               class="btn btn-secondary">
+                Back to Dashboard
+            </a>
+
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

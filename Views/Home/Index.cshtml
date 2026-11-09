@@ -1,0 +1,154 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- HERO SECTION -->
+<section class="raceday-hero">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+
+            <div class="col-lg-7 hero-content">
+                <span class="hero-tag">WELCOME TO RACEDAY</span>
+
+                <h1>
+                    Your Race.<br />
+                    Your Pace.<br />
+                    <span>Your Journey.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover exciting running events, challenge yourself
+                    and become part of a community that moves together.
+                    Your next adventure starts here!
+                </p>
+
+                <div class="hero-buttons">
+                    <a asp-controller="Events"
+                       asp-action="Index"
+                       class="btn btn-orange">
+                        Explore Events
+                    </a>
+
+                    <a asp-controller="Account"
+                       asp-action="Register"
+                       class="btn btn-outline-light">
+                        Join RaceDay
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <span>🏃</span>
+                    Find your next finish line with RaceDay.
+                </div>
+            </div>
+
+            <div class="col-lg-5 hero-visual">
+                <div class="hero-circle">
+                    <div class="runner-icon">🏃‍♂️</div>
+                    <div class="hero-floating-card">
+                        <strong>READY, SET, GO!</strong>
+                        <small>Your next race awaits.</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS SECTION -->
+<section class="features-section">
+    <div class="container">
+
+        <div class="section-heading text-center">
+            <span>WHY RACEDAY?</span>
+            <h2>Everything you need to get started</h2>
+            <p>We make finding and joining races simple.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">🏁</div>
+                    <h4>Discover Events</h4>
+                    <p>
+                        Explore upcoming races and find an event
+                        that matches your interests.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h4>Easy Enrolment</h4>
+                    <p>
+                        Choose your preferred race category
+                        and enrol with just a few clicks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h4>Manage Your Profile</h4>
+                    <p>
+                        Keep your personal details updated
+                        and view your race enrolments.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+    <div class="container">
+
+        <div class="section-heading text-center">
+            <span>GET STARTED</span>
+            <h2>Your journey in three simple steps</h2>
+        </div>
+
+        <div class="row g-4 text-center">
+
+            <div class="col-md-4">
+                <div class="step-number">01</div>
+                <h4>Create an Account</h4>
+                <p>Register as a participant and join RaceDay.</p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="step-number">02</div>
+                <h4>Choose Your Event</h4>
+                <p>Browse available races and select your event.</p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="step-number">03</div>
+                <h4>Enrol and Get Ready</h4>
+                <p>Select your category and prepare for race day.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="join-section">
+    <div class="container text-center">
+        <h2>Every finish line starts somewhere.</h2>
+        <p>Take your first step and discover your next race.</p>
+
+        <a asp-controller="Account"
+           asp-action="Register"
+           class="btn btn-orange">
+            Get Started Today
+        </a>
+    </div>
+</section>

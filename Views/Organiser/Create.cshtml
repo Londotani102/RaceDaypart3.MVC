@@ -1,0 +1,63 @@
+﻿@model RaceDay.MVC.Models.EventCreateViewModel
+
+@{
+    ViewData["Title"] = "Create Event";
+}
+
+<div class="container mt-5">
+    <h2>Create Race Event</h2>
+
+    <form asp-controller="Organiser" asp-action="Create" method="post">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="EventName"></label>
+            <input asp-for="EventName" class="form-control" />
+            <span asp-validation-for="EventName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="description">Description</label>
+            <textarea asp-for="description" class="form-control"></textarea>
+            <span asp-validation-for="description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="EventDate"></label>
+            <input asp-for="EventDate" type="datetime-local" class="form-control" />
+            <span asp-validation-for="EventDate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Location"></label>
+            <input asp-for="Location" class="form-control" />
+            <span asp-validation-for="Location" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="EventType"></label>
+            <input asp-for="EventType" class="form-control" />
+            <span asp-validation-for="EventType" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="RouteMapUrl"></label>
+            <input asp-for="RouteMapUrl" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="RouteId">Select Route</label>
+            <select asp-for="RouteId" asp-items="ViewBag.Routes" class="form-control">
+                <option value="">-- Select a Route --</option>
+            </select>
+            <span asp-validation-for="RouteId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Event</button>
+
+        <a asp-controller="Organiser"
+           asp-action="Dashboard"
+           class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

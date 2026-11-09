@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Organiser Dashboard";
+}
+
+<div class="container mt-5">
+
+    <h2>Welcome, @ViewBag.FirstName @ViewBag.Surname!</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    @if (TempData["RouteSuccess"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["RouteSuccess"]
+        </div>
+    }
+
+    @if (TempData["CategorySuccess"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["CategorySuccess"]
+        </div>
+    }
+
+    <p>Organiser Dashboard</p>
+
+    <hr />
+
+    <div class="card p-4 shadow mt-3">
+        <h4>Manage Race Events</h4>
+        <p>Create and manage your race events.</p>
+
+        <a asp-controller="Organiser"
+           asp-action="Create"
+           class="btn btn-primary">
+            Create New Event
+        </a>
+    </div>
+
+    <div class="card p-4 shadow mt-3">
+        <h4>Manage Routes</h4>
+        <p>Create race routes for your events.</p>
+
+        <a asp-controller="Organiser"
+           asp-action="CreateRoute"
+           class="btn btn-primary">
+            Create New Route
+        </a>
+    </div>
+
+    <div class="card p-4 shadow mt-3">
+        <h4>My Events</h4>
+        <p>View the race events available in the system.</p>
+
+        <a asp-controller="Organiser"
+           asp-action="MyEvents"
+           class="btn btn-primary">
+            View My Events
+        </a>
+    </div>
+
+    <div class="card p-4 shadow mt-3">
+        <h4>Create Event Category</h4>
+        <p>Add age groups and distances to your events.</p>
+
+        <a asp-controller="Organiser"
+           asp-action="CreateCategory"
+           class="btn btn-primary">
+            Create Category
+        </a>
+    </div>
+    <a asp-controller="Results"
+       asp-action="Index"
+       class="btn btn-primary">View Race Results</a>
+
+    <a asp-controller="Results"
+       asp-action="Create"
+       class="btn btn-success">Record Result</a>
+
+</div>

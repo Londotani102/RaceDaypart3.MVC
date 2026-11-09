@@ -1,0 +1,306 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* RACEDAY GENERAL STYLING */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #202B3C;
+    background-color: #ffffff;
+}
+
+/* HERO SECTION */
+
+.raceday-hero {
+    background: linear-gradient(120deg, #101D35, #203B60);
+    color: white;
+    padding: 70px 0;
+    overflow: hidden;
+}
+
+.min-vh-75 {
+    min-height: 500px;
+}
+
+.hero-content {
+    padding: 35px 20px;
+}
+
+.hero-tag {
+    display: inline-block;
+    background-color: rgba(255,255,255,0.12);
+    color: #FF9D43;
+    padding: 9px 17px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero-content h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    font-weight: 800;
+    line-height: 1.12;
+    margin-bottom: 25px;
+}
+
+    .hero-content h1 span {
+        color: #FF9D43;
+    }
+
+.hero-description {
+    color: #D5DFEA;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 560px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn-orange {
+    background-color: #FF922E;
+    color: white;
+    border: 2px solid #FF922E;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .btn-orange:hover {
+        background-color: #E87816;
+        border-color: #E87816;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+.hero-note {
+    margin-top: 35px;
+    color: #D5DFEA;
+    font-size: 14px;
+}
+
+    .hero-note span {
+        margin-right: 8px;
+    }
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.hero-circle {
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #FFB66D, #FF8525);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.runner-icon {
+    font-size: 135px;
+}
+
+.hero-floating-card {
+    position: absolute;
+    bottom: 15px;
+    right: -35px;
+    background: white;
+    color: #202B3C;
+    padding: 18px 22px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+    .hero-floating-card strong {
+        color: #F18426;
+        font-size: 14px;
+    }
+
+    .hero-floating-card small {
+        color: #687386;
+    }
+
+/* FEATURES SECTION */
+
+.features-section {
+    padding: 85px 0;
+    background-color: #F7F9FC;
+}
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+    .section-heading span {
+        color: #F18426;
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 13px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+        font-weight: 750;
+        margin-top: 12px;
+        color: #17243A;
+    }
+
+    .section-heading p {
+        color: #6B7280;
+        margin-top: 12px;
+    }
+
+.feature-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 14px;
+    height: 100%;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.04);
+    transition: 0.3s;
+}
+
+    .feature-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+    }
+
+.feature-icon {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.feature-card p {
+    color: #6B7280;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* HOW IT WORKS */
+
+.how-section {
+    padding: 85px 0;
+    background: white;
+}
+
+.step-number {
+    font-size: 45px;
+    font-weight: 800;
+    color: #FF922E;
+    margin-bottom: 15px;
+}
+
+.how-section h4 {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.how-section p {
+    color: #6B7280;
+}
+
+/* JOIN SECTION */
+
+.join-section {
+    background: #172943;
+    color: white;
+    padding: 70px 20px;
+}
+
+    .join-section h2 {
+        font-size: 34px;
+        font-weight: 750;
+        margin-bottom: 15px;
+    }
+
+    .join-section p {
+        color: #D5DFEA;
+        margin-bottom: 25px;
+    }
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 767px) {
+
+    .raceday-hero {
+        padding: 40px 0 65px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        padding: 30px 20px;
+    }
+
+    .hero-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .runner-icon {
+        font-size: 100px;
+    }
+
+    .hero-floating-card {
+        right: -10px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .join-section h2 {
+        font-size: 27px;
+    }
+}

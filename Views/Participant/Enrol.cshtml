@@ -1,0 +1,32 @@
+﻿@model RaceDay.MVC.Models.EnrolmentViewModel
+
+<h2>Enrol in Event</h2>
+
+<form asp-controller="Participant" asp-action="Enrol" method="post">
+
+    <input type="hidden" asp-for="EventId" />
+
+    <div class="mb-3">
+        <label class="form-label">Select Category</label>
+
+        <select asp-for="CategoryId"
+                asp-items="ViewBag.Categories"
+                class="form-control">
+            <option value="">-- Select Category --</option>
+        </select>
+
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Confirm Enrolment
+    </button>
+
+    <a asp-controller="Events"
+       asp-action="Index"
+       class="btn btn-secondary">
+        Cancel
+    </a>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+</form>

@@ -1,0 +1,41 @@
+﻿@model List<RaceDay.MVC.Models.ResultViewModel>
+
+@{
+    ViewData["Title"] = "My Race Results";
+}
+
+<h2>My Race Results</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+@if (!Model.Any())
+{
+    <p>You don't have any recorded results yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Event ID</th>
+                <th>Finish Time</th>
+                <th>Position</th>
+                <th>Recorded At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var result in Model)
+            {
+                <tr>
+                    <td>@result.EventEnrolment?.EventId</td>
+                    <td>@result.FinishTime</td>
+                    <td>@result.Position</td>
+                    <td>@result.RecordedAt.ToLocalTime()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

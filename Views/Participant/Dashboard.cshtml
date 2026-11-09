@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Participant Dashboard";
+}
+
+<div class="container mt-5">
+
+    <h2>Welcome, @ViewBag.FirstName!</h2>
+
+    <p>Welcome to your RaceDay Participant Dashboard.</p>
+
+    <hr />
+
+    <div class="row mt-4">
+
+        <!-- Browse Events -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow p-3 h-100">
+                <h5>Browse Events</h5>
+                <p>Discover upcoming races and events.</p>
+
+                <a asp-controller="Events"
+                   asp-action="Index"
+                   class="btn btn-primary">
+                    View Events
+                </a>
+            </div>
+        </div>
+
+        <!-- My Enrolments -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow p-3 h-100">
+                <h5>My Enrolments</h5>
+                <p>View the races you have joined.</p>
+
+                <a asp-controller="Participant"
+                   asp-action="MyEnrolments"
+                   class="btn btn-primary">
+                    My Enrolments
+                </a>
+            </div>
+        </div>
+
+        <!-- My Profile -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow p-3 h-100">
+                <h5>My Profile</h5>
+                <p>View and update your personal details.</p>
+
+                <a asp-controller="Participant"
+                   asp-action="Profile"
+                   class="btn btn-primary">
+                    My Profile
+                </a>
+            </div>
+        </div>
+        <a asp-controller="Results"
+           asp-action="MyResults"
+           class="btn btn-primary">View My Results</a>
+    </div>
+
+</div>

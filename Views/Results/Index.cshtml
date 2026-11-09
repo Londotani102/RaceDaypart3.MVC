@@ -1,0 +1,49 @@
+﻿@model List<RaceDay.MVC.Models.ResultViewModel>
+
+@{
+    ViewData["Title"] = "Race Results";
+}
+
+<h2>Race Results</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<a asp-controller="Results"
+   asp-action="Create"
+   class="btn btn-primary mb-3">Record New Result</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Result ID</th>
+            <th>Enrolment ID</th>
+            <th>Participant ID</th>
+            <th>Event ID</th>
+            <th>Finish Time</th>
+            <th>Position</th>
+            <th>Recorded At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model)
+        {
+            <tr>
+                <td>@result.ResultId</td>
+                <td>@result.EventEnrollmentId</td>
+                <td>@result.EventEnrolment?.ParticipantId</td>
+                <td>@result.EventEnrolment?.EventId</td>
+                <td>@result.FinishTime</td>
+                <td>@result.Position</td>
+                <td>@result.RecordedAt.ToLocalTime()</td>
+            </tr>
+        }
+    </tbody>
+</table>

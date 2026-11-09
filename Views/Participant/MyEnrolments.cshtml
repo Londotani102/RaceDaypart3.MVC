@@ -1,0 +1,77 @@
+﻿@model List<RaceDay.MVC.Models.EnrolmentResultViewModel>
+
+@{
+    ViewData["Title"] = "My Enrolments";
+}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">My Event Enrolments</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.Error
+        </div>
+    }
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-info">
+            You have not enrolled in any events yet.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-striped">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Enrolment ID</th>
+                        <th>Event ID</th>
+                        <th>Category ID</th>
+                        <th>Enrolment Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var enrolment in Model)
+                    {
+                        <tr>
+                            <td>@enrolment.EventEnrolmentId</td>
+                            <td>@enrolment.EventId</td>
+                            <td>@enrolment.CategoryId</td>
+                            <td>@enrolment.EnrolmentDate.ToString("dd MMMM yyyy")</td>
+                            <td>@enrolment.Status</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+    }
+
+    <a asp-controller="Participant"
+       asp-action="Dashboard"
+       class="btn btn-secondary">
+        Back to Dashboard
+    </a>
+
+    <a asp-controller="Events"
+       asp-action="Index"
+       class="btn btn-primary">
+        Browse Events
+    </a>
+
+</div>
